@@ -3,8 +3,26 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ulu Creative Media</title>
-  <meta name="description" content="Sosyal medya ajansı — Ulu Creative Media." />
+  <title>ULU Creative Media — Yaratıcı Medya & Dijital Pazarlama Ajansı</title>
+  <meta name="description" content="ULU Creative Media; sosyal medya yönetimi, içerik üretimi, video & fotoğraf, drone çekimi, reklam yönetimi ve web tasarımıyla markanızın potansiyelini görünür hale getiren yaratıcı medya ajansıdır." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <link rel="canonical" href="https://ulucreativemedia.com/" />
+  <link rel="icon" href="logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="logo.png" />
+
+  <!-- Open Graph / sosyal paylaşım -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="ULU Creative Media" />
+  <meta property="og:title" content="ULU Creative Media — Markanızın potansiyelini görünür hale getiriyoruz" />
+  <meta property="og:description" content="Sosyal medya yönetimi, içerik üretimi, video & fotoğraf, drone çekimi, reklam yönetimi ve web tasarımıyla markanıza güçlü bir dijital varlık kazandırıyoruz." />
+  <meta property="og:url" content="https://ulucreativemedia.com/" />
+  <meta property="og:image" content="https://ulucreativemedia.com/logo.png" />
+  <meta property="og:locale" content="tr_TR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ULU Creative Media — Markanızın potansiyelini görünür hale getiriyoruz" />
+  <meta name="twitter:description" content="Yaratıcı medya ve dijital pazarlama ajansı. Sosyal medya, içerik, video & fotoğraf, drone, reklam yönetimi ve web tasarım." />
+  <meta name="twitter:image" content="https://ulucreativemedia.com/logo.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -15,7 +33,7 @@
     <a class="logo" href="#top">
       <img src="logo.png" alt="ULU Creative Media" class="logo-img" />
     </a>
-    <nav>
+    <nav id="primaryNav">
       <a href="#reel">Reel</a>
       <a href="#about">Hakkımızda</a>
       <a href="#contact">İletişim</a>
@@ -29,6 +47,9 @@
         </svg>
       </a>
       <button class="cta-sm" type="button" data-open-quote>Fiyat Al<span>→</span></button>
+      <button class="nav-toggle" type="button" aria-label="Menüyü aç/kapat" aria-controls="primaryNav" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
@@ -36,7 +57,7 @@
     <!-- ===== HERO ===== -->
     <section class="hero">
       <div class="hero-bg">
-        <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=2400&q=85&auto=format" alt="Drone'dan kıyı şeridi" />
+        <img src="hero.jpg" alt="ULU Creative Media drone çekimi — dağlar arasında göl" />
       </div>
       <div class="hero-grain"></div>
       <div class="hero-inner">
@@ -47,8 +68,8 @@
         </h1>
         <div class="hero-bottom">
           <p class="hero-tag">
-            ULU Creative Media — drone çekimleriyle markanıza gökyüzünden
-            farklı bir bakış açısı kazandırıyoruz.
+            ULU Creative Media — markanızın potansiyelini görünür hale
+            getiriyoruz.
           </p>
           <a class="reel-btn" href="#reel">
             <span class="play">▶</span>
@@ -62,13 +83,19 @@
       <div class="marquee">
         <div class="marquee-track">
           <span>SOSYAL MEDYA YÖNETİMİ</span><span>•</span>
+          <span>İÇERİK ÜRETİMİ</span><span>•</span>
           <span>REKLAM YÖNETİMİ</span><span>•</span>
           <span>VİDEO &amp; FOTOĞRAF</span><span>•</span>
           <span>DRONE ÇEKİMİ</span><span>•</span>
+          <span>WEB TASARIM</span><span>•</span>
+          <span>MARKA İLETİŞİMİ</span><span>•</span>
           <span>SOSYAL MEDYA YÖNETİMİ</span><span>•</span>
+          <span>İÇERİK ÜRETİMİ</span><span>•</span>
           <span>REKLAM YÖNETİMİ</span><span>•</span>
           <span>VİDEO &amp; FOTOĞRAF</span><span>•</span>
           <span>DRONE ÇEKİMİ</span><span>•</span>
+          <span>WEB TASARIM</span><span>•</span>
+          <span>MARKA İLETİŞİMİ</span><span>•</span>
         </div>
       </div>
     </section>
@@ -107,14 +134,13 @@
         <h2>Dört ana <span class="accent">disiplin.</span></h2>
       </div>
       <div class="service-grid">
-        <div class="service-card featured">
+        <div class="service-card">
           <div class="srv-head">
             <span class="srv-no">01</span>
             <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.4">
               <path d="M21 11.5a8.5 8.5 0 0 1-12.2 7.7L3 21l1.8-5.8A8.5 8.5 0 1 1 21 11.5Z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01"/>
             </svg>
           </div>
-          <span class="featured-badge">Öne Çıkan</span>
           <h3>Sosyal Medya Yönetimi</h3>
           <p>Hesap stratejisi, içerik takvimi, topluluk yönetimi ve düzenli paylaşım. Markanızı doğru kitleyle buluşturuyoruz.</p>
           <ul class="srv-list">
@@ -190,10 +216,10 @@
       </div>
       <div class="about-text">
         <span class="kicker">— Hakkımızda</span>
-        <h2>Markanıza <span class="accent">gökyüzünden</span> farklı bir bakış açısı.</h2>
-        <p>ULU Creative Media olarak drone çekimleriyle markanıza farklı bir bakış açısı kazandırıyoruz. Yüksek kaliteli hava çekimleri sayesinde mekanları, projeleri ve etkinlikleri etkileyici sinematik görüntülerle buluşturuyor; izleyenlerde güçlü bir ilk izlenim oluşturuyoruz.</p>
-        <p>Tanıtım filmleri, işletme çekimleri, etkinlik organizasyonları, arsa ve gayrimenkul projeleri, otel ve tesis tanıtımları gibi birçok alanda profesyonel drone çekim hizmeti sunuyoruz. Modern ekipmanlarımız ve yaratıcı çekim tekniklerimizle, markanızın hikâyesini gökyüzünden estetik ve dikkat çekici bir şekilde anlatıyoruz.</p>
-        <p>Sadece görüntü değil, markanıza değer katan etkileyici bir deneyim üretiyoruz.</p>
+        <h2>Markanızın potansiyelini <span class="accent">görünür</span> hale getiriyoruz.</h2>
+        <p>ULU Creative Media, markaların dijital dünyada güçlü bir kimlik oluşturmasına yardımcı olan yaratıcı medya ve dijital pazarlama ajansıdır. Sosyal medya yönetimi, içerik üretimi, fotoğraf ve video çekimi, drone çekimleri, reklam yönetimi, web tasarım ve marka iletişimi alanlarında yenilikçi çözümler sunuyoruz.</p>
+        <p>Her markanın kendine özgü bir hikâyesi olduğuna inanıyor, bu hikâyeyi hedef kitlesiyle en etkili şekilde buluşturmak için strateji ve yaratıcılığı bir araya getiriyoruz. Ürettiğimiz her içerikte estetik, kalite ve sonuç odaklı yaklaşımı ön planda tutuyor; markaların görünürlüğünü artırırken aynı zamanda güvenilir ve güçlü bir dijital varlık oluşturmalarını sağlıyoruz.</p>
+        <p>ULU Creative Media olarak amacımız yalnızca içerik üretmek değil, markaların büyüme yolculuğunda uzun vadeli bir çözüm ortağı olmaktır. Dijital dünyanın hızla değişen dinamiklerini yakından takip ederek, her projede yenilikçi fikirleri etkili sonuçlarla buluşturuyoruz.</p>
         <button class="btn-ghost" type="button" data-open-quote>Fiyat Al <span>→</span></button>
       </div>
     </section>

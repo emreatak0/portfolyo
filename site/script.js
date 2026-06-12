@@ -1,5 +1,21 @@
 // Stil 02 — reveal, sayaç animasyonu, hero parallax
 (function(){
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ===== Mobil menü (hamburger) =====
+  const nav = document.querySelector('.nav');
+  const navToggle = document.querySelector('.nav-toggle');
+  const primaryNav = document.getElementById('primaryNav');
+  if(navToggle && nav && primaryNav){
+    const setMenu = (open) => {
+      nav.classList.toggle('menu-open', open);
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+    navToggle.addEventListener('click', () => setMenu(!nav.classList.contains('menu-open')));
+    primaryNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', e => { if(e.key === 'Escape') setMenu(false); });
+  }
+
   const reveals = document.querySelectorAll('.intro, .reel-card, .rail-card, .service-card, .about-img, .about-text, .cta');
   reveals.forEach(el => el.classList.add('reveal'));
   const io = new IntersectionObserver(entries => {
@@ -11,7 +27,7 @@
 
   // Hero parallax — slow downward motion on bg image
   const heroImg = document.querySelector('.hero-bg img');
-  if(heroImg){
+  if(heroImg && !reduceMotion){
     let ticking = false;
     window.addEventListener('scroll', () => {
       if(!ticking){
