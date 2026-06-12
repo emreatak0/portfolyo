@@ -205,12 +205,17 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   padding:.9rem 0;
 }
 .marquee-track{
-  display:flex;gap:2.5rem;width:max-content;
+  display:flex;width:max-content;
   animation:marquee 35s linear infinite;
+  will-change:transform;
+}
+.marquee-group{
+  display:flex;align-items:center;gap:2.5rem;
+  padding-right:2.5rem;flex-shrink:0;
   font-family:var(--sans);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;
   color:var(--text-soft);
 }
-.marquee-track span:nth-child(odd){color:var(--accent)}
+.marquee-group span:nth-child(odd){color:var(--accent)}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* ===== INTRO ===== */

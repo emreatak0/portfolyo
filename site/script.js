@@ -16,6 +16,35 @@
     document.addEventListener('keydown', e => { if(e.key === 'Escape') setMenu(false); });
   }
 
+  // ===== Marquee — her ekranda kesintisiz döngü =====
+  const marquee = document.querySelector('.marquee');
+  const mTrack = marquee && marquee.querySelector('.marquee-track');
+  if(mTrack){
+    const group = mTrack.querySelector('.marquee-group');
+    const baseItems = Array.from(group.children).map(n => n.cloneNode(true));
+    const buildMarquee = () => {
+      // tek grubu ekran genişliğini aşana kadar doldur
+      const needW = Math.max(marquee.offsetWidth, window.innerWidth) * 1.2;
+      let guard = 0;
+      while(group.scrollWidth < needW && guard < 40){
+        baseItems.forEach(n => group.appendChild(n.cloneNode(true)));
+        guard++;
+      }
+      // ikinci (birebir) kopya — %50 kaydırınca dikişsiz birleşir
+      mTrack.querySelectorAll('.marquee-group').forEach((g, i) => { if(i > 0) g.remove(); });
+      const clone = group.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      mTrack.appendChild(clone);
+      // sabit hız: ~80px/sn
+      if(!reduceMotion){
+        mTrack.style.animationDuration = (group.scrollWidth / 80) + 's';
+      }
+    };
+    buildMarquee();
+    let rT;
+    window.addEventListener('resize', () => { clearTimeout(rT); rT = setTimeout(buildMarquee, 250); }, { passive:true });
+  }
+
   const reveals = document.querySelectorAll('.intro, .reel-card, .rail-card, .service-card, .about-img, .about-text, .cta');
   reveals.forEach(el => el.classList.add('reveal'));
   const io = new IntersectionObserver(entries => {
