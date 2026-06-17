@@ -126,7 +126,7 @@
       quoteStatus.className = 'quote-status';
       quoteStatus.textContent = 'Gönderiliyor…';
       try {
-        const res = await fetch('https://formsubmit.co/ajax/Kadir03848@gmail.com', {
+        const res = await fetch('https://formsubmit.co/ajax/kadirulusoytasarim@gmail.com', {
           method: 'POST',
           headers: { 'Accept': 'application/json' },
           body: new FormData(quoteForm)
